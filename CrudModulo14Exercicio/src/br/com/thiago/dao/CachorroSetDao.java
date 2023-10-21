@@ -20,7 +20,7 @@ public class CachorroSetDao implements ICachorroDao {
     }
 
     @Override
-    public void excluir(Integer codigo) {
+    public void excluir(String codigo) {
         Cachorro cachorroEncontrado = null;
         for (Cachorro cachorro : this.set) {
             if (cachorro.getCodigo().equals(codigo)) {
@@ -47,9 +47,9 @@ public class CachorroSetDao implements ICachorroDao {
     }
 
     @Override
-    public Cachorro consultar(Integer codigo) {
+    public Cachorro consultar(String nome) {
         for (Cachorro cachorroCadastrado : this.set){
-            if (cachorroCadastrado.getCodigo().equals(codigo)){
+            if (cachorroCadastrado.getNome().equals(nome)){
                 return cachorroCadastrado;
             }
         }

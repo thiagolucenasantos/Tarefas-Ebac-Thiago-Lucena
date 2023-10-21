@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class CachorroMapDao implements ICachorroDao {
 
-    private Map<Integer, Cachorro> map;
+    private Map<String, Cachorro> map;
 
     public CachorroMapDao() {
         this.map = new HashMap<>();
@@ -16,18 +16,18 @@ public class CachorroMapDao implements ICachorroDao {
 
     @Override
     public Boolean cadastrar(Cachorro cachorro) {
-        if (this.map.containsKey(cachorro.getCodigo())) {
+        if (this.map.containsKey(cachorro.getNome())) {
             return false;
         }
-        this.map.put(cachorro.getCodigo(), cachorro);
+        this.map.put(cachorro.getNome(), cachorro);
         return true;
     }
 
     @Override
-    public void excluir(Integer codigo) {
-        Cachorro cachorroCadastrado = this.map.get(codigo);
+    public void excluir(String nome) {
+        Cachorro cachorroCadastrado = this.map.get(nome);
         if (cachorroCadastrado != null) {
-            this.map.remove(cachorroCadastrado.getCodigo(), cachorroCadastrado);
+            this.map.remove(cachorroCadastrado.getNome(), cachorroCadastrado);
         }
 
     }
@@ -43,8 +43,8 @@ public class CachorroMapDao implements ICachorroDao {
     }
 
     @Override
-    public Cachorro consultar(Integer codigo) {
-        return this.map.get(codigo);
+    public Cachorro consultar(String nome) {
+        return this.map.get(nome);
     }
 
     @Override

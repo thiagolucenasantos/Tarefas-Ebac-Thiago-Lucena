@@ -4,22 +4,22 @@ import java.util.Objects;
 
 public class Cachorro {
 
-    private Integer codigo;
+    private Long codigo;
     private String nome;
     private String raca;
 
 
     public Cachorro(String codigo, String nome, String raca) {
-        this.codigo = Integer.valueOf(codigo);
+        this.codigo = Long.valueOf(codigo.trim());
         this.nome = nome;
         this.raca = raca;
     }
 
-    public Integer getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 

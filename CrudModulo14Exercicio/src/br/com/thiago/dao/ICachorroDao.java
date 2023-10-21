@@ -7,9 +7,9 @@ import java.util.Collection;
 
 public interface ICachorroDao {
     public Boolean cadastrar(Cachorro cachorro);
-    public void excluir(Integer codigo);
+    public void excluir(String nome);
     public void alterar(Cachorro cachorro);
-    public Cachorro consultar(Integer codigo);
+    public Cachorro consultar(String nome);
     public Collection<Cachorro> buscarTodos();
 
 }
